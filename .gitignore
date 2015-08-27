@@ -1,0 +1,8 @@
+*.iml
+.idea/
+node_modules/
+app/_site/
+app/examples/
+app/sea-modules/
+app/spm_modules/
+app/tests/
