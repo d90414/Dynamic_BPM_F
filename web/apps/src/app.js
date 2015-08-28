@@ -1,7 +1,14 @@
 'use strict';
 
+require('./components/service/service');
+require('./components/directive/directive');
+require('./components/filter/filter');
+
 require('./template/template');
 require('./index/index');
+require('./account/account');
+
+
 var AngularSeedSpm = angular.module('ASS',[
 	 //'ngAnimate',
     'ngCookies',
@@ -12,9 +19,15 @@ var AngularSeedSpm = angular.module('ASS',[
     'ui.utils',
     'ui.bootstrap',
     'oc.lazyLoad',
+    'ASS.service',
+    'ASS.directive',
+    'ASS.filter',
 
     'ASS.template',
-    'ASS.index'
+    'ASS.index',
+    'ASS.account'
+
+
 	])
 	.value('myRoot', '/kfps/')
     .value('kibhRoot', '/kibh_service/')

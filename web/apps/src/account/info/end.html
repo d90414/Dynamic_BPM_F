@@ -1,0 +1,102 @@
+<div tabset class="nav-tabs-alt">
+    <!-- 基本信息-->
+    <div tab>
+        <div tab-heading>
+            <span class="font-bold">账户资料</span>
+        </div>
+        <div class="form-group">
+        <br>
+            <span class="col-xs-2 text-right text-md m-t-xs">姓名：</span>
+            <div class="col-xs-4 text-left">
+                <input type="text" class="form-control" placeholder="修改姓名" name="code" value="{{$root.global.account.USER_FNAME }}"  required ng-pattern="/^[0-9]{6}$/" ng-disabled='myForm.phone.$invalid'>
+                <span ng-bind="account.USER_FNAME"></span>
+            </div>
+        </br>
+            <br>
+                <span class="col-xs-2 text-right text-md m-t-xs">性别：</span>
+                <div class="col-xs-4 text-left">
+                    <input type="text" class="form-control" placeholder="修改性别" name="code" value="{{$root.global.account.SEX}}" required ng-pattern="/^[0-9]{6}$/" ng-disabled='myForm.phone.$invalid'>
+                </div>
+            </br>
+            <br>
+            <span class="col-xs-2 text-right text-md m-t-xs">证件类型：</span>
+            <div class="col-xs-4 text-left">
+                <input type="text" class="form-control" placeholder="修改证件类型" name="code" value="{{$root.global.account.ID_TYPE_DESC }}" required ng-pattern="/^[0-9]{6}$/" ng-disabled='myForm.phone.$invalid'>
+            </div>
+            </br>
+            <br>
+            <span class="col-xs-2 text-right text-md m-t-xs">证件号码：</span>
+            <div class="col-xs-4 text-left">
+                <input type="text" class="form-control" placeholder="修改证件号码" name="code" value="{{$root.global.account.ID_CODE }}" required ng-pattern="/^[0-9]{6}$/" ng-disabled='myForm.phone.$invalid'>
+            </div>
+            </br>
+            <br>
+            <div class="row wrapper-xs">
+                <div class="col-xs-2 text-right">资金账户：</div>
+                <div class="col-xs-10 m-l-n-md text-left">
+                    <span ng-bind="account.FUNDSACCT_CODE_VIEW"></span>
+                        <span ng-if="!account.FUNDSACCT_CODE_VIEW">
+                            <span class="text-danger">您尚未绑定资金账户</span>
+                            <a class="m-l-md text-info" ui-sref="auth.binddealaccount">绑定资金账户</a>
+                        </span>
+                </div>
+            </div>
+            </br>
+            <div class="col-xs-offset-2 col-xs-2"><button class="btn btn-sm bg-info w-full" ng-click="update()">修改资料</button></div>
+            <div class="col-xs-10 m-l-n-md text-left">
+        </div>
+        <!--<div class="m-t-md">
+            <div class="row row-sm">
+                <div class="row wrapper-xs">
+                    <div class="col-xs-2 text-right">真实姓名：</div>
+                    <div class="col-xs-10 m-l-n-md text-left"><span ng-bind="account.USER_FNAME"></span></div>
+                </div>
+                <div class="row wrapper-xs">
+                    <div class="col-xs-2 text-right">性别：</div>
+                    <div class="col-xs-10 m-l-n-md text-left"><span ng-bind="sex[account.SEX]"></span></div>
+                </div>
+                <div class="row wrapper-xs">
+                    <div class="col-xs-2 text-right">证件类型：</div>
+                    <div class="col-xs-10 m-l-n-md text-left"><span ng-bind="account.ID_TYPE_DESC"></span></div>
+                </div>
+                <div class="row wrapper-xs">
+                    <div class="col-xs-2 text-right">证件号码：</div>
+                    <div class="col-xs-10 m-l-n-md text-left"><span ng-bind="account.ID_CODE | fieldCover:'4'"></span></div>
+                </div>
+                &lt;!&ndash;div class="row wrapper-xs">
+                    <div class="col-xs-2 text-right">账户状态：</div>
+                    <div class="col-xs-10 m-l-n-md text-left text-muted">
+                        <span ng-bind="account.ACCT_STATUS">
+                        </span>
+                    </div>
+                </div&ndash;&gt;
+                <div class="row wrapper-xs">
+                    <div class="col-xs-2 text-right">资金账户：</div>
+                    <div class="col-xs-10 m-l-n-md text-left">
+                        <span ng-bind="account.FUNDSACCT_CODE_VIEW"></span>
+                        <span ng-if="!account.FUNDSACCT_CODE_VIEW">
+                            <span class="text-danger">您尚未绑定资金账户</span>
+                            <a class="m-l-md text-info" ui-sref="auth.binddealaccount">绑定资金账户</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="row wrapper-xs">
+                    <div class="col-xs-2 text-right">业务范畴：</div>
+                    <div class="col-xs-10 m-l-n-md text-left"><span ng-bind="account.ACCT_EXT_ATTR_NAME"></span></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-offset-1 col-xs-11">
+                    <div class="m-t-md m-b-md"></div>
+                </div>
+            </div>
+             <div class="form-group">
+                <div class="col-xs-offset-1 col-xs-2"><button class="btn btn-sm bg-info w-full" ng-click="update()">修改资料</button></div>
+                &lt;!&ndash;<div class="col-xs-10 m-l-n-md text-left">&ndash;&gt;
+            </div>
+        </div>
+    </div>-->
+    <span class="pull-right m-t-sm m-r-xs"><a href="#/page/help/2#8" target="_blank" class="text-right m-t help-link">常见问题</a></span>
+    <!-- /基本信息-->
+</div>
+

@@ -1,19 +1,19 @@
 'use strict';
 
-angular.module('ASS.index').controller('IndexCtrl', ['$rootScope', '$scope', '$window', '$state',
-    function ($rootScope, $scope, $window, $state) {
-
+angular.module('ASS.index').controller('IndexCtrl', ['$rootScope', '$scope',
+    function ($rootScope, $scope) {
+        console.log('IndexCtrl');
 
      
 
-        $scope.$on('$viewContentLoaded', function () {
-            if ($.browser.msie && $.browser.version <= 9) {
-                if ($.browser.version <= 8) {
-                    $('label').removeClass('i-checks i-checks-sm i-checks-lg');
-                }
-                // Invoke the plugin
-                $('input, textarea').placeholder();
-            }
-        });
+        // $scope.$on('$viewContentLoaded', function () {
+        //     if ($.browser.msie && $.browser.version <= 9) {
+        //         if ($.browser.version <= 8) {
+        //             $('label').removeClass('i-checks i-checks-sm i-checks-lg');
+        //         }
+        //         // Invoke the plugin
+        //         $('input, textarea').placeholder();
+        //     }
+        // });
 
     }]);
