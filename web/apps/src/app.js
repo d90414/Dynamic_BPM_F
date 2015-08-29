@@ -98,6 +98,19 @@ var AngularSeedSpm = angular.module('ASS',[
             }
         };
 
+         $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+            $rootScope.global.account  = {
+                    'USER_NAME':$window.sessionStorage.sessionid,
+                    'FUNDSACCT_CODE':'11111111111'//资金账户
+                 };
+            if (toState.name && toState.name.indexOf('page.account') != -1
+                && toState.name != 'auth.bindregaccount' && toState.name != 'auth.binddealaccount') {
+                  console.log('$stateChangeStart');
+            }
+          
+
+         });
+
 
     }]);
 
