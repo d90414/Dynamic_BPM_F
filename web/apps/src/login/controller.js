@@ -7,7 +7,9 @@ angular.module('ASS.login').controller('LoginCtrl', ['$rootScope', 'rsa', '$scop
 
         $scope.loginuser = {
             logintype: 1,
-            email:'xxg3053@qq.com'
+            username:'',
+            userpassword:'',
+            email:''
         };
 
         $scope.submitting = 1;

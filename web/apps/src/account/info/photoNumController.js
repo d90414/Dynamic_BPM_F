@@ -1,66 +1,29 @@
 'use strict';
 
-angular.module('ASS.account').controller('PhotoNumCtrl', ['$rootScope', '$scope', '$window', '$state', 'accountService', 'myAlert','$http',
-    function ($rootScope, $scope, $window, $state, accountService, myAlert,$http) {
+angular.module('ASS.account').controller('PhotoNumCtrl', ['$rootScope', '$scope', '$window', '$state', 'accountService', 'myAlert','$http','bpmRoot','bpmService',
+    function ($rootScope, $scope, $window, $state, accountService, myAlert,$http,bpmRoot,bpmService) {
       if(!$rootScope.flowName){
             $state.go("page.account.security.start");
             return;
         }
         $scope.codeflag = 1;
-        var getNav = function(){
-          //获取菜单
-            $http({
-                method:"POST",
-                url:$rootScope.jbpmBaseUrl+'/auth/tasks',
-                params:{
-                   flowName: $rootScope.flowName,
-                    userName:$rootScope.userName
-                },
-                data:{}
-            }).success(function(data) {
-                console.log(data);
-                $scope.flowActive = data.active;
-                $scope.flowNav = data.activities;
+        $scope.flowTaskName = "手机号验证";
 
-            }).error(function(error) {
-                console.log(error)
-            });
+        bpmService['getFlowNav']($rootScope.flowName,$rootScope.userName).then(function(res){
+                    $scope.flowActive = res.data.active;
+                    $scope.taskId = res.data.activeTaskId;
+                    $scope.flowNav = res.data.activities;
+                    if($scope.flowTaskName != $scope.flowActive){
+                        nextPage($scope.flowActive)
+                    }
+        });
+
        
-        } 
-       //发起流程
-       /****/
-         $http({
-                method:"POST",
-                url:$rootScope.jbpmBaseUrl+'/auth/start',
-                params:{
-                    flowName: $rootScope.flowName,
-                    userName:$rootScope.userName
-                },
-                data:{}
-            }).success(function(data) {
-                //更新菜单 getNav();
-                 getNav();
-
-                console.log(data);
-               //////////////////////////////////////////
-               $scope.taskId = data.taskId;
-                if(data.activityName=='密码验证'){
-                  $state.go('page.account.passwdNum');
-                }else if(data.activityName=='手机号验证'){
-                    //$state.go('page.account.photoNum');
-                }if(data.activityName=='身份验证'){
-                    $state.go('page.account.shengfen');
-                }
-
-            }).error(function(error) {
-                console.log(error)
-            });
-        
         ///下一步提交按钮
         $scope.doReply = function(){
               $http({
                 method:"POST",
-                url:$rootScope.jbpmBaseUrl+'/auth/reply',
+                url:bpmRoot+'/auth/reply',
                 params:{
                     flowName: $rootScope.flowName,
                     userName:$rootScope.userName,

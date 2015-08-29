@@ -16,6 +16,9 @@ module.exports = angular.module('ASS.service.accountService', [])
                             params:{},
                             data:{}
                         })
+            },
+            getMessage:function(){
+                console.log('getMessage');
             }
 
         }

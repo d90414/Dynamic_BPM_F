@@ -1,7 +1,6 @@
 'use strict';
 module.exports = angular.module('ASS.index', ['ui.router', 'oc.lazyLoad'])
 .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
-    console.log('ASS.index');
     $stateProvider
         .state('page.index', {
             abstract: true,

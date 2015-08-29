@@ -1,0 +1,6 @@
+ <div class="row text-left">
+      <div class="col-xs-4 no-padder" style="background: url(public/images/step_bline.png) no-repeat 34px 15px" ng-repeat="item in flowNav">
+        <div class="btn btn-icon btn-rounded btn-info" ng-class="{'disabled':flowActive==item.activityName}"><span class="text-xxl">{{$index+1}}</span></div>
+        <div class="m-t-xs">{{item.activityName}}</div>
+    </div>
+</div>

@@ -1,1 +1,34 @@
-{{users}}
+<div ng-if="showType=='-01'" class="wrapper-xl text-center text-md">
+    <span class="">流程中没有任何用户！</span>
+</div>
+<div ng-show="showType=='1'">
+	<div class="m-t m-b">
+		 <div class="table-responsive m-t-md">
+		 	<div ng-src="public/images/loading.gif"></div>
+		 	<table class="table prdlist">
+		 		<thead>
+		 			 <tr>
+		 				<th class="text-center">序号</th>
+		 			 	<th class="text-center">ID</th>
+		 			 	<th class="text-center">Name</th>
+		 			 	<th class="text-center">role</th>
+		 			 	<th class="text-center">businessEmail</th>
+		 			 	<th class="text-center">操作</th>
+		 			 </tr>
+		 		</thead>
+		 		<tbody>
+		 			<tr ng-if="isLoading">
+		 			</tr>
+		 			<tr ng-repeat="user in users" class="text-center">
+		 				<td>{{$index+1}}</td>
+		 				<td>{{user.id}}</td>
+		 				<td>{{user.name}}</td>
+		 				<td>{{user.role}}</td>
+		 				<td>{{user.businessEmail}}</td>
+		 				<td><a class="btn btn-xs btn-info" ng-click="delete(user.id)">删除</a></td>
+		 			</tr>
+		 		</tbody>
+		 	</table>
+		 </div>
+	</div>
+</div>

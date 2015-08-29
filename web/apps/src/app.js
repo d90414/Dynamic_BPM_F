@@ -31,8 +31,8 @@ var AngularSeedSpm = angular.module('ASS',[
 
 	])
 	.value('myRoot', '/kfps/')
-    .value('bpmRoot', 'http://localhost:18082/Dynamic_BPM')
-    .value('kibhFile', '/kibh_file/')
+    .constant('bpmRoot', 'http://localhost:18082/Dynamic_BPM')
+    .constant('bpmApiRoot', 'http://localhost:18082/BPM_API')
     .value('SMVC', true)
     //.config([])
     .controller('baseCtrl',['$scope','$rootScope', '$http','$state','$localStorage','$window','myConfirm','myAlert',function($scope,$rootScope,$http,$state, $localStorage,$window,myConfirm,myAlert){

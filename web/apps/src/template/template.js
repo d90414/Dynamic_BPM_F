@@ -2,8 +2,8 @@
 
 module.exports = angular.module('ASS.template', ['oc.lazyLoad'])
     .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.when('', '/page/index');
-        $urlRouterProvider.when('/', '/page/index');
+        $urlRouterProvider.when('', '/page/index/mytodo');
+        $urlRouterProvider.when('/', '/page/index/mytodo');
         $urlRouterProvider.otherwise('/404');
 
         $stateProvider
@@ -13,7 +13,7 @@ module.exports = angular.module('ASS.template', ['oc.lazyLoad'])
             }).state('page', {
                 abstract: true,
                 url: '/page',
-                templateUrl: 'apps/src/template/kibh.html',
+                templateUrl: 'apps/src/template/index.html',
                 controller: 'templateCtrl',
                 resolve: {
                     deps: ['$ocLazyLoad', function ($ocLazyLoad) {

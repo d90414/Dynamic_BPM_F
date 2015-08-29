@@ -1,1 +1,32 @@
-{{processInstance}}
+<div ng-if="showType=='-01'" class="wrapper-xl text-center text-md">
+    <span class="">没有任何流程实例！</span>
+</div>
+<div ng-show="showType=='1'">
+	<div class="m-t m-b">
+		 <div class="table-responsive m-t-md">
+		 	<div ng-src="public/images/loading.gif"></div>
+		 	<table class="table prdlist">
+		 		<thead>
+		 			 <tr>
+		 				<th class="text-center">序号</th>
+		 			 	<th class="text-center">ID</th>
+		 			 	<th class="text-center">Name</th>
+		 			 	<th class="text-center">state</th>
+		 			 	<th class="text-center">操作</th>
+		 			 </tr>
+		 		</thead>
+		 		<tbody>
+		 			<tr ng-if="isLoading">
+		 			</tr>
+		 			<tr ng-repeat="pi in processInstance" class="text-center">
+		 				<td>{{$index+1}}</td>
+		 				<td>{{pi.id}}</td>
+		 				<td>{{pi.name}}</td>
+		 				<td>{{pi.state}}</td>
+		 				<td><a class="btn btn-xs btn-info" ng-click="delete(pi.id)">删除</a></td>
+		 			</tr>
+		 		</tbody>
+		 	</table>
+		 </div>
+	</div>
+</div>

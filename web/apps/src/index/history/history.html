@@ -1,1 +1,36 @@
-{{historyTask}}
+<div ng-if="showType=='-01'" class="wrapper-xl text-center text-md">
+    <span class="">所有人没有历史记录！</span>
+</div>
+<div ng-show="showType=='1'">
+	<div class="m-t m-b">
+		 <div class="table-responsive m-t-md">
+		 	<div ng-src="public/images/loading.gif"></div>
+		 	<table class="table prdlist">
+		 		<thead>
+		 			 <tr>
+		 				<th class="text-center">序号</th>
+		 			 	<th class="text-center">ID</th>
+		 			 	<th class="text-center">Assignee</th>
+		 			 	<th class="text-center">CreateTime</th>
+		 			 	<th class="text-center">Duration</th>
+		 			 	<th class="text-center">EndTime</th>
+		 			 	<th class="text-center">State</th>
+		 			 </tr>
+		 		</thead>
+		 		<tbody>
+		 			<tr ng-if="isLoading">
+		 			</tr>
+		 			<tr ng-repeat="task in historyTask" class="text-center">
+		 				<td>{{$index+1}}</td>
+		 				<td>{{task.id}}</td>
+		 				<td>{{task.assignee}}</td>
+		 				<td>{{task.createTime}}</td>
+		 				<td>{{task.duration}}</td>
+		 				<td>{{task.endTime}}</td>
+		 				<td>{{task.state}}</td>
+		 			</tr>
+		 		</tbody>
+		 	</table>
+		 </div>
+	</div>
+</div>

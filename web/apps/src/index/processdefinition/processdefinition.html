@@ -1,1 +1,40 @@
-{{processDefinition}}
+<div ng-if="showType=='-01'" class="wrapper-xl text-center text-md">
+    <span class="">没有任何流程定义！</span>
+</div>
+<div ng-show="showType=='1'">
+	<div class="m-t m-b">
+		 <div class="table-responsive m-t-md">
+		 	<div ng-src="public/images/loading.gif"></div>
+		 	<table class="table prdlist">
+		 		<thead>
+		 			 <tr>
+		 				<th class="text-center">序号</th>
+		 			 	<th class="text-center">ID</th>
+		 			 	<th class="text-center">Name</th>
+		 			 	<th class="text-center">version</th>
+		 			 	<th class="text-center">key</th>
+		 			 	<th class="text-center">description</th>
+		 			 	<th class="text-center">deploymentId</th>
+		 			 	<th class="text-center">imageResourceName</th>
+		 			 	<th class="text-center">操作</th>
+		 			 </tr>
+		 		</thead>
+		 		<tbody>
+		 			<tr ng-if="isLoading">
+		 			</tr>
+		 			<tr ng-repeat="pd in processDefinition" class="text-center">
+		 				<td>{{$index+1}}</td>
+		 				<td>{{pd.id}}</td>
+		 				<td>{{pd.name}}</td>
+		 				<td>{{pd.version}}</td>
+		 				<td>{{pd.key}}</td>
+		 				<td>{{pd.description}}</td>
+		 				<td>{{pd.deploymentId}}</td>
+		 				<td>{{pd.imageResourceName}}</td>
+		 				<td><a class="btn btn-xs btn-info" ng-click="delete(pd.id)">删除</a></td>
+		 			</tr>
+		 		</tbody>
+		 	</table>
+		 </div>
+	</div>
+</div>

@@ -17,6 +17,7 @@ require('./custom/messagePanel');
 
 require('./custom/flowTopbar');
 require('./custom/flowSidebar');
+require('./custom/bpmNavbar');
 
 var directive = angular.module('ASS.directive', [
 /********************default*********************/
@@ -36,7 +37,8 @@ var directive = angular.module('ASS.directive', [
     'ASS.directive.messagePanel',
 
      'ASS.directive.flowTopbar',
-     'ASS.directive.flowSidebar'
+     'ASS.directive.flowSidebar',
+     'ASS.directive.bpmNavbar'
 
 ]);
 

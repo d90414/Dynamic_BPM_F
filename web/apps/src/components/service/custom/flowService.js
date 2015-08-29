@@ -27,6 +27,14 @@ module.exports = angular.module('ASS.service.flowService', [])
                             data:{}
                         })
             },
+             deleteProcessDefinition:function (id) {
+                return $http({
+                            method:"GET",
+                            url:bpmRoot+'/flow/pd/del',
+                            params:{id:id},
+                            data:{}
+                        })
+            },
             getAllProcessInstance:function () {
                 return $http({
                             method:"GET",
@@ -35,11 +43,27 @@ module.exports = angular.module('ASS.service.flowService', [])
                             data:{}
                         })
             },
+            deleteProcessInstance:function (id) {
+                return $http({
+                            method:"GET",
+                            url:bpmRoot+'/flow/pi/del',
+                            params:{id:id},
+                            data:{}
+                        })
+            },
             getAllUser:function () {
                 return $http({
                             method:"GET",
                             url:bpmRoot+'/flow/user',
                             params:{},
+                            data:{}
+                        })
+            },
+            deleteUser:function (id) {
+                return $http({
+                            method:"GET",
+                            url:bpmRoot+'/flow/user/del',
+                            params:{id:id},
                             data:{}
                         })
             },

@@ -12,6 +12,7 @@ require('./custom/registerService');
 require('./custom/accountSafetyService');
 
 require('./custom/flowService');
+require('./custom/bpmService');
 
 var service = angular.module('ASS.service', [
 /********************default*********************/
@@ -26,7 +27,8 @@ var service = angular.module('ASS.service', [
     'ASS.service.registerService', // 注册
     'ASS.service.accountSafetyService', //账户安全
 
-    'ASS.service.flowService' //流程
+    'ASS.service.flowService', //流程
+    'ASS.service.bpmService'  //页面流
 
 ]);
 
