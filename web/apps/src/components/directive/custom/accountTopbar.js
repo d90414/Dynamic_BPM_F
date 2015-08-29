@@ -5,7 +5,7 @@ module.exports = angular.module('ASS.directive.accountTopbar', [])
         return {
             restrict: "A",
             scope: true,
-            templateUrl: 'apps/src/blocks/directivetpl/kfps/accountTopbar.html',
+            templateUrl: 'apps/src/blocks/directivetpl/accountTopbar.html',
             link: function ($scope, ele, attrs, ngModelCtrl) {
             }
         };

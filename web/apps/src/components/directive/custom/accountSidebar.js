@@ -6,7 +6,7 @@ module.exports = angular.module('ASS.directive.accountSidebar', [])
             restrict: "A",
             replace: true,
             scope: {},
-            templateUrl: 'apps/src/blocks/directivetpl/kfps/accountSidebar.html',
+            templateUrl: 'apps/src/blocks/directivetpl/accountSidebar.html',
             link: function ($scope, ele, attrs, ngModelCtrl) {
                 $scope.sideLinks = [{
                     name: '个人资料',

@@ -1,0 +1,29 @@
+<div class="kfps-bg">
+	<style>
+		.bglogin {
+			background: url(public/images/icon-login.png) no-repeat;
+			background-size: 100% 100%;
+			filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='public/images/icon-login.png',sizingMethod='scale') \0\9;
+		}
+	</style>
+
+	<div ng-include="'apps/src/blocks/top.html'"></div>
+	
+
+	
+	<div ui-butterbar></div>
+	
+	<div ng-class="{'bglogin': $state.includes('auth.login')}">
+		<div class="kdlayout">
+		    <div class="row m-l-none m-r-none">
+		        <div class="col-xs-12 m-t-sm m-b">
+		            <div class="app-content">
+		                <div class="app-content-body animated fadeIn" ui-view></div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	</div>
+	
+	<div ng-include="'apps/src/blocks/footer.html'"></div>
+</div>

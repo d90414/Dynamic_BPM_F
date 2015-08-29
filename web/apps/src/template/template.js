@@ -20,5 +20,16 @@ module.exports = angular.module('ASS.template', ['oc.lazyLoad'])
                         return $ocLazyLoad.load([ 'apps/src/template/templateController.js' ]);
                     }]
                 }
+            })
+            .state('auth', {
+                abstract: true,
+                url: '/auth',
+                templateUrl: 'apps/src/template/auth.html',
+                controller: 'templateCtrl',
+                resolve: {
+                    deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([ 'apps/src/template/templateController.js' ]);
+                    }]
+                }
             });
     }]);

@@ -6,7 +6,7 @@ module.exports = angular.module('ASS.directive.messagePanel', [])
             restrict: "A",
             replace: true,
             scope: {},
-            templateUrl: 'apps/src/blocks/directivetpl/kfps/messagePanel.html',
+            templateUrl: 'apps/src/blocks/directivetpl/messagePanel.html',
             link: function ($scope, ele, attrs, ngModelCtrl) {
                 if ($window.sessionStorage.sessionid) {
                     $rootScope.getNoReadMessages();

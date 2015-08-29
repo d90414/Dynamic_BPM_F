@@ -1,9 +1,12 @@
 'use strict';
 
-angular.module('ASS.index').controller('IndexCtrl', ['$rootScope', '$scope',
-    function ($rootScope, $scope) {
+angular.module('ASS.index').controller('IndexCtrl', ['$rootScope', '$scope','$window','$state',
+    function ($rootScope, $scope,$window,$state) {
         console.log('IndexCtrl');
-
+        if (!$window.sessionStorage.sessionid) {
+            $state.go("auth.login");
+            return;
+        }
      
 
         // $scope.$on('$viewContentLoaded', function () {
