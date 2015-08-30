@@ -7,55 +7,16 @@ angular.module('ASS.account').controller('PasswdCtrl', ['$rootScope', '$scope', 
             return;
         }
        $rootScope.userName = $window.sessionStorage.sessionid;
-  var getNav = function(){
-          //获取菜单
-            $http({
-                method:"POST",
-                url:bpmRoot+'/auth/tasks',
-                params:{
-                   flowName: $rootScope.flowName,
-                    userName:$rootScope.userName
-                },
-                data:{}
-            }).success(function(data) {
-                console.log(data);
-                $scope.flowActive = data.active;
-                $scope.flowNav = data.activities;
+       $scope.flowTaskName = "密码验证";
 
-            }).error(function(error) {
-                console.log(error)
-            });
-       
-        } 
-//发起流程
-       /****/
-         $http({
-                method:"POST",
-                url:bpmRoot+'/auth/start',
-                params:{
-                    flowName: $rootScope.flowName,
-                    userName:$rootScope.userName
-                },
-                data:{}
-            }).success(function(data) {
-                //更新菜单 getNav();
-                 getNav();
-
-                console.log(data);
-               //////////////////////////////////////////
-               $scope.taskId = data.taskId;
-                if(data.activityName=='密码验证'){
-                  //$state.go('page.account.passwdNum');
-                }else if(data.activityName=='手机号验证'){
-                    $state.go('page.account.photoNum');
-                }if(data.activityName=='身份验证'){
-                    $state.go('page.account.shengfen');
-                }
-
-            }).error(function(error) {
-                console.log(error)
-            });
-        
+        bpmService['getFlowNav']($rootScope.flowName,$rootScope.userName).then(function(res){
+                    $scope.flowActive = res.data.active;
+                    $scope.taskId = res.data.activeTaskId;
+                    $scope.flowNav = res.data.activities;
+                    if($scope.flowTaskName != $scope.flowActive){
+                        nextPage($scope.flowActive)
+                    }
+        });
         
         ///下一步提交按钮
         $scope.doReply = function(){
