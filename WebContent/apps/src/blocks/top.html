@@ -35,7 +35,7 @@
                 </div>
                 <div class="col-xs-6 no-padder">
                     <ul class="nav nav-pills nav-xs m-t-md m-b-md m-l-none">
-                        <li ui-sref-active="active"><a ui-sref="page.index.mytodo" class="text-info text-md">流程管理</a></li>
+                        <li ng-class="{'active': $state.includes('page.index')}"><a ui-sref="page.index.mytodo" class="text-info text-md">流程管理</a></li>
                         <li ng-class="{'active': $state.includes('page.account')}"><a ui-sref="page.account.info"
                                                                               class="text-info text-md">个人中心</a></li>
                     </ul>
