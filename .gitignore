@@ -4,5 +4,5 @@ node_modules/
 apps/_site/
 apps/examples/
 apps/sea-modules/
-app/spm_modules/
+apps/spm_modules/
 apps/tests/

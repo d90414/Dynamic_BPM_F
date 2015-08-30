@@ -1,5 +1,5 @@
 var PORT = 3000;       //端口
-var DIR = 'web';     //用于存放html的目录
+var DIR = 'WebContent';     //用于存放html的目录
 
 var http = require('http');
 var url = require('url');
